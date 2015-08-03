@@ -16,7 +16,11 @@ describe('String#title_case') do
   end
 
   it ("handles non-letter characters") do
-    expect(("100 days of solitude").title_case()).to(eq("100 Days of Solitude"))
+    expect(("100 days of solitude!!").title_case()).to(eq("100 Days of Solitude!!"))
+  end
+
+  it("manages all uppercase entries") do
+    expect(("THE GRAPES OF WRATH").title_case()).to(eq("The Grapes of Wrath"))
   end
 
   it("does not capitalize prepositions") do
@@ -26,4 +30,5 @@ describe('String#title_case') do
   it("capitalizes designated words if they are the first word") do
     expect(("a tale of two cities").title_case()).to(eq("A Tale of Two Cities"))
   end
+
 end
